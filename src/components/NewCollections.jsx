@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import new1 from "../assets/new1.jpg";
 import new2 from "../assets/new3.jpg";
 import new3 from "../assets/new7.jpg";
@@ -6,9 +7,16 @@ import new4 from "../assets/new6.jpg";
 import new5 from "../assets/new5.jpg";
 import new6 from "../assets/new2.jpg";
 import new7 from "../assets/new4.jpg";
-import { Link } from "react-router-dom";
 
-const images = [new1, new2, new3, new4, new5, new6, new7];
+const products = [
+  { image: new1, name: "Urban Fit Tee", price: 29.99 },
+  { image: new2, name: "Graphic Vibes Tee", price: 34.99 },
+  { image: new3, name: "Classic Black Tee", price: 24.99 },
+  { image: new4, name: "Retro Style Tee", price: 39.99 },
+  { image: new5, name: "Tie-Dye Cool Tee", price: 31.99 },
+  { image: new6, name: "Street Edge Tee", price: 27.99 },
+  { image: new7, name: "Minimal Design Tee", price: 22.99 },
+];
 
 const NewCollections = () => {
   return (
@@ -23,26 +31,23 @@ const NewCollections = () => {
           </p>
         </div>
 
-        <div className="flex gap-2 overflow-x-auto scrollbar-hide px-1">
-          {images.map((img, index) => (
-            <Link to={`/${img}`}
+        <div className="flex gap-4 overflow-x-auto scrollbar-hide px-1">
+          {products.map((product, index) => (
+            <Link
+              to={`/aboutProduct`}
               key={index}
-              className="min-w-[250px] sm:min-w-[300px] bg-white rounded-2xl m-5 shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="min-w-[250px] sm:min-w-[300px] bg-white rounded-2xl m-4 shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               <div className="overflow-hidden rounded-t-2xl">
                 <img
-                  src={img}
-                  alt={`Collection ${index + 1}`}
+                  src={product.image}
+                  alt={product.name}
                   className="w-full h-80 object-cover transform transition-transform duration-300 hover:scale-105"
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-lg text-gray-800">
-                  Collection {index + 1}
-                </h3>
-                <p className="text-gray-500 text-sm mt-1">
-                  Stylish & modern picks just for you.
-                </p>
+                <h3 className="font-semibold text-lg text-gray-800">{product.name}</h3>
+                <p className="text-gray-500 text-sm mt-1">Price: ${product.price.toFixed(2)}</p>
               </div>
             </Link>
           ))}

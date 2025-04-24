@@ -3,19 +3,19 @@ import home from "../assets/Home.png";
 
 const Hero = () => {
   return (
-    <div className="w-full h-[40vh] lg:h-[70vh] md:h-[26rem] relative">
+    <div className="w-full h-[40vh] lg:h-[90vh] md:h-[36rem] relative">
       <img
         src={home}
         className="w-full h-full object-fit"
         alt="Hero background"
       />
 
-      <div className="absolute inset-0 flex items-center justify-center flex-col text-center px-4 sm:px-6">
-        <h4 className="text-yellow-500 text-2xl sm:text-3xl lg:text-5xl font-bold leading-snug">
+      <div className="absolute inset-0 flex items-center justify-center flex-col text-center px-4 sm:px-6 lg:-mt-20">
+        <h4 className="text-white text-2xl sm:text-3xl lg:text-5xl font-bold leading-snug">
           Your Heroic Shopping Adventure Starts Here!
         </h4>
 
-        <p className="text-yellow-500 text-bold md:mb-8 sm:text-base lg:text-xl font-semibold mt-4 sm:mt-6">
+        <p className="text-zinc-300 text-bold md:mb-8 sm:text-base lg:text-xl font-semibold mt-4 sm:mt-6">
           Discover a universe of collectibles, action figures, and memorabilia.
         </p>
 
